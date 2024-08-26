@@ -4,12 +4,16 @@
 #include <Adafruit_TCS34725.h>
 #include <Adafruit_SCD30.h>
 #include <SoftwareSerial.h>
+#include <Ticker.h>
 #include <DFRobot_mmWave_Radar.h>
 int LED_BLINK = 2;
+
 #define SECRET_SSID "CE-Hub-Student"
 #define SECRET_PASS "casa-ce-gagarin-public-service"
 #define SECRET_MQTTUSER "student"
 #define SECRET_MQTTPASS "ce2021-mqtt-forget-whale"
+
+// Ticker timer;
 
 const char* ssid     = SECRET_SSID;
 const char* password = SECRET_PASS;
@@ -21,7 +25,14 @@ WiFiClient espClient;
 PubSubClient client(espClient);
 long lastMsg = 0;
 char msg[50];
+float temp=0;
+float Humi=0;
+float CO=0;
 int value = 0;
+int people = 0;
+int people1 = 0;
+int people2=0;
+int people3=0;
 uint16_t r, g, b, c, colorTemp, lux;
 int val=-1;
 
@@ -30,18 +41,38 @@ DFRobot_mmWave_Radar sensor(&mySerial);
 Adafruit_SCD30  scd30;
 Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_614MS, TCS34725_GAIN_1X);
 
+// void onTimer() {
+//   sensor.factoryReset();       
+//   sensor.DetRangeCfg(0, 0.5);   
+//   sensor.OutputLatency(0, 0); 
+//     Serial.println("Timer triggered!");
+// }
+
+Ticker restartTimer;
+
+void restartESP() {
+    Serial.println("Restarting now...");
+    ESP.restart();  
+}
+
 void setup() {
+
   // put your setup code here, to run once:
   Serial.begin(115200);
+  restartTimer.attach(90, restartESP);
+    sensor.factoryReset();       
+  sensor.DetRangeCfg(0, 0.5);   
+  sensor.OutputLatency(0, 0); 
+  // timer.attach(90, onTimer);
   mySerial.begin(115200);
-    startWifi();
+  startWifi();
+  pinMode(BUILTIN_LED, OUTPUT);     
+  digitalWrite(BUILTIN_LED, HIGH);  
   // start MQTT server
   client.setServer(mqtt_server, 1884);
   client.setCallback(callback);
   pinMode(LED_BLINK, OUTPUT);
-  sensor.factoryReset();       
-  sensor.DetRangeCfg(0, 0.6);   
-  sensor.OutputLatency(0, 0);  
+ 
   while (!Serial) delay(10);     // will pause Zero, Leonardo, etc until serial console opens
 
   Serial.println("Adafruit SCD30 test!");
@@ -73,9 +104,16 @@ void setup() {
   while (1);
 
  }
+ 
 }
 
 void loop() {
+
+    people=0;
+    people1=0;
+    people2=0;
+    people3=0;
+    Serial.print(people);
   // put your main code here, to run repeatedly:
   if (scd30.dataReady()){
    // Serial.println("Data available!");
@@ -83,14 +121,17 @@ void loop() {
     if (!scd30.read()){ Serial.println("Error reading sensor data"); return; }
 
     Serial.print("Temperature: ");
-    Serial.print(scd30.temperature);
+    temp=scd30.temperature;
+    Serial.print(temp);
     Serial.println(" degrees C");
     
     Serial.print("Relative Humidity: ");
-    Serial.print(scd30.relative_humidity);
+    Humi=scd30.relative_humidity;
+    Serial.print(Humi);
     Serial.println(" %");
     
     Serial.print("CO2: ");
+    CO=scd30.CO2;
     Serial.print(scd30.CO2, 3);
     Serial.println(" ppm");
     Serial.println("");
@@ -124,11 +165,21 @@ void loop() {
   val = sensor.readPresenceDetection();
   if(val==1)
   {
-    Serial.println("People:Yes");
+
+        Serial.println("People:Yes");
+        people=2;
+        people1=20;
+        people2=200;
+        people3=2000;
+
   }
   else if(val==0)
   {
     Serial.println("People:No");
+    people=1;
+    people1=10;
+    people2=100;
+    people3=1000;
   }
   else
   {
@@ -166,22 +217,52 @@ void sendMQTT() {
   client.loop();
 
 
-  snprintf (msg, 50, "%.0i", r);
+  snprintf (msg, 50, "%.0i", colorTemp);
   // Serial.print("Publish message for t: ");
   // Serial.println(msg);
-  client.publish("student/CASA0014/plant/ucfnaaf/R", msg);
+  client.publish("student/CASA0014/plant/ucfnaaf/Color Temperature", msg);
 
 
-  snprintf (msg, 50, "%.0i", g);
+  snprintf (msg, 50, "%.0i", lux);
   // Serial.print("Publish message for h: ");
   // Serial.println(msg);
-  client.publish("student/CASA0014/plant/ucfnaaf/G", msg);
+  client.publish("student/CASA0014/plant/ucfnaaf/Light Intensity", msg);
 
   //Moisture = analogRead(soilPin);   // moisture read by readMoisture function
-  snprintf (msg, 50, "%.0i", b);
+  snprintf (msg, 50, "%.0i", people);
   // Serial.print("Publish message for m: ");
   // Serial.println(msg);
-  client.publish("student/CASA0014/plant/ucfnaaf/B", msg);
+  client.publish("student/CASA0014/plant/ucfnaaf/People", msg);
+
+  snprintf (msg, 50, "%.0i", people1);
+  // Serial.print("Publish message for m: ");
+  // Serial.println(msg);
+  client.publish("student/CASA0014/plant/ucfnaaf/People1", msg);
+
+  snprintf (msg, 50, "%.0i", people2);
+  // Serial.print("Publish message for m: ");
+  // Serial.println(msg);
+  client.publish("student/CASA0014/plant/ucfnaaf/People2", msg);
+
+  snprintf (msg, 50, "%.0i", people3);
+  // Serial.print("Publish message for m: ");
+  // Serial.println(msg);
+  client.publish("student/CASA0014/plant/ucfnaaf/People3", msg);
+
+  snprintf (msg, 50, "%.2f", temp);
+  // Serial.print("Publish message for m: ");
+  // Serial.println(msg);
+  client.publish("student/CASA0014/plant/ucfnaaf/Temperature", msg);  
+
+  snprintf (msg, 50, "%.2f", Humi);
+  // Serial.print("Publish message for m: ");
+  // Serial.println(msg);
+  client.publish("student/CASA0014/plant/ucfnaaf/Humidity", msg);
+
+  snprintf (msg, 50, "%.2f", CO);
+  // Serial.print("Publish message for m: ");
+  // Serial.println(msg);
+  client.publish("student/CASA0014/plant/ucfnaaf/CO2", msg);
 }
 
 void callback(char* topic, byte* payload, unsigned int length) {
@@ -198,8 +279,10 @@ void callback(char* topic, byte* payload, unsigned int length) {
   // Switch on the LED if an 1 was received as first character
   if ((char)payload[0] == '2') {
   // Turn the LED on (Note that LOW is the voltage level
+  digitalWrite(BUILTIN_LED, LOW);
     // but actually the LED is on; this is because it is active low on the ESP-01)
   } else if((char)payload[0] == '1') {
+    digitalWrite(BUILTIN_LED, HIGH);
 
   }
 
@@ -217,7 +300,7 @@ void reconnect() {
     if (client.connect(clientId.c_str(), mqttuser, mqttpass)) {
       Serial.println("connected");
       // ... and resubscribe
-      client.subscribe("student/CASA0014/plant/ucfnaaf/inTopic");
+      client.subscribe("student/CASA0014/plant/ucfnaaf/People");
 
       
     } else {
