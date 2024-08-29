@@ -13,14 +13,33 @@ The Smart Connected System includes smart chair detector equipped with few senso
 
 ### Hardware:
 #### Sensors:
-This project use mm-Wave radar SEN0395, CO2, temperature and humidity sensor SCD30, and light sensor TCS3472.
+This project use mm-Wave radar SEN0395, CO2, temperature and humidity sensor SCD30, and light sensor TCS3472. Use the code provided to test each sensor before integration.
+
+SEN0395:
+
+<img src="Picture/SEN0395.png" height="500em" />
+
+SCD30:
+
+<img src="Picture/SCD30.png" height="500em" />
+
+TCS3472:
+
+<img src="Picture/TCS3472.png" height="500em" />
 
 #### Circuit:
 Connect all the sensor as the schematic shown as below:
 
 Smart chair detector circuit schematic:
+
 <img src="Picture/SMART CHAIR DETECTOR CIRCUIT SCHEMATIC.png" height="500em" />
 
+<img src="Picture/Smart Chair First Circuit Prototype.jpg" height="500em" />
+
 Communication center circuit schematic:
+
 <img src="Picture/Communication Center Circuit Schematic.png" height="500em" />
+
+<img src="Picture/Control Center First Circuit.jpg" height="500em" />
+
 
