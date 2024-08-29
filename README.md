@@ -149,4 +149,4 @@ When people sit on one of the chair:
 
 4. Assemble all the electronic components and enclosure.
 
-5. Deploy on your chair
+5. Run the code and deploy on your chair
