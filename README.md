@@ -18,7 +18,9 @@ This project use mm-Wave radar SEN0395, CO2, temperature and humidity sensor SCD
 #### Circuit:
 Connect all the sensor as the schematic shown as below:
 
+Smart chair detector circuit schematic:
 <img src="Picture/SMART CHAIR DETECTOR CIRCUIT SCHEMATIC.png" height="500em" />
 
+Communication center circuit schematic:
 <img src="Picture/Communication Center Circuit Schematic.png" height="500em" />
 
