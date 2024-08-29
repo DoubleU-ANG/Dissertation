@@ -10,7 +10,7 @@ This project aims to implementing a smart Internet of Things (IoT) strategy on c
 
 ## Methodologies:
 The Smart Connected System includes smart chair detector equipped with few sensors and physical twins of chair.
-<img src="Picture/SCD30.png" height="200em" />
+<img src="Picture/overview.png" height="200em" />
 
 ### Hardware:
 
