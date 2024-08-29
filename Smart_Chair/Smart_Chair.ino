@@ -8,10 +8,10 @@
 #include <DFRobot_mmWave_Radar.h>
 int LED_BLINK = 2;
 
-#define SECRET_SSID "CE-Hub-Student"
-#define SECRET_PASS "casa-ce-gagarin-public-service"
-#define SECRET_MQTTUSER "student"
-#define SECRET_MQTTPASS "ce2021-mqtt-forget-whale"
+#define SECRET_SSID "use your own here"
+#define SECRET_PASS "use your own here"
+#define SECRET_MQTTUSER "use your own here"
+#define SECRET_MQTTPASS "use your own here"
 
 // Ticker timer;
 
