@@ -83,9 +83,9 @@ Smart Chair Detector Enclosure:
 
 Base of Communication Center:
 
-<img src="Picture/base11.jpg" height="400em" />
+<img src="Picture/base11.jpg" height="350em" />
 
-<img src="Picture/base22.jpg" height="400em" />
+<img src="Picture/base22.jpg" height="350em" />
 
 Servo Holder:
 
@@ -105,4 +105,4 @@ Chair Holder:
 
 Chair:
 
-<img src="Picture/chair.jpg" height="100em" />
+<img src="Picture/chair.jpg" height="200em" />
