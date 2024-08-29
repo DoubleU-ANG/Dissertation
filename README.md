@@ -57,20 +57,20 @@ After successfully assembling the circuit board and connecting all components, t
 
 Code for smart chair detector:
 
-<img src="Picture/Picture/codecc.png" height="500em" />
+<img src="Picture/codecc.png" height="500em" />
 
 Code for communication center:
 
-<img src="Picture/Picture/codescd.png" height="500em" />
+<img src="Picture/codescd.png" height="500em" />
 
 ##### Printed Circuit Board (PCB)
 PCB has been designed for ensuring a more stable and wireless circuit. You can build your own PCB or modified mine which I designed on LCEDA according to your project.
 
-<img src="Picture/PCB Detector.jpg" height="500em" />
+<img src="Picture/PCB Detector.jpg" height="300em" />
 
 <img src="Picture/Smart Chair PCB Design.jpg" height="500em" />
 
-<img src="Picture/PCB CC.jpg" height="500em" />
+<img src="Picture/PCB CC.jpg" height="300em" />
 
 <img src="Picture/PCB CC PROTOTYPE.jpg" height="500em" />
 
@@ -93,7 +93,7 @@ Servo Holder:
 
 Top of Communication Center
 
-<img src="Picture/TOP3.jpg" height="200em" />
+<img src="Picture/TOP3.jpg" height="350em" />
 
 <img src="Picture/TOP4.jpg" height="200em" />
 
