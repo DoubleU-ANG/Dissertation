@@ -19,11 +19,11 @@ Project Overview:
 
 #### Hardware List:
 
-##### Microcontrollers:
+##### 1. Microcontrollers:
 ESP8266 HUZZAH (Smart Chair Detector)
 ESP32 E-paper screen driver board (Communication Center)
 
-##### Sensors:
+##### 2. Sensors:
 This project use mm-Wave radar SEN0395, CO2, temperature and humidity sensor SCD30, and light sensor TCS3472. Use the code provided to test each sensor before integration.
 
 SEN0395:
@@ -38,7 +38,7 @@ TCS3472:
 
 <img src="Picture/TCS3472.png" height="200em" />
 
-##### Actuators:
+##### 3. Actuators:
 Actuators are mainly used in communication center, they are: servos, LED rings and OLED screens.
 
 #### Circuit:
