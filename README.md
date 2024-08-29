@@ -17,15 +17,15 @@ This project use mm-Wave radar SEN0395, CO2, temperature and humidity sensor SCD
 
 SEN0395:
 
-<img src="Picture/SEN0395.png" height="500em" />
+<img src="Picture/SEN0395.png" height="200em" />
 
 SCD30:
 
-<img src="Picture/SCD30.png" height="500em" />
+<img src="Picture/SCD30.png" height="200em" />
 
 TCS3472:
 
-<img src="Picture/TCS3472.png" height="500em" />
+<img src="Picture/TCS3472.png" height="200em" />
 
 #### Circuit:
 ##### Circuit Connection:
@@ -83,26 +83,26 @@ Smart Chair Detector Enclosure:
 
 Base of Communication Center:
 
-<img src="Picture/base11.jpg" height="500em" />
+<img src="Picture/base11.jpg" height="400em" />
 
-<img src="Picture/base22.jpg" height="500em" />
+<img src="Picture/base22.jpg" height="400em" />
 
 Servo Holder:
 
-<img src="Picture/sh.jpg" height="500em" />
+<img src="Picture/sh.jpg" height="200em" />
 
 Top of Communication Center
 
-<img src="Picture/TOP3.jpg" height="500em" />
+<img src="Picture/TOP3.jpg" height="200em" />
 
-<img src="Picture/TOP4.jpg" height="500em" />
+<img src="Picture/TOP4.jpg" height="200em" />
 
 Chair Holder:
 
-<img src="Picture/chair holder1.jpg" height="500em" />
+<img src="Picture/chair holder1.jpg" height="200em" />
 
-<img src="Picture/chair holder2.jpg" height="500em" />
+<img src="Picture/chair holder2.jpg" height="200em" />
 
 Chair:
 
-<img src="Picture/chair.jpg" height="500em" />
+<img src="Picture/chair.jpg" height="100em" />
