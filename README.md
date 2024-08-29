@@ -92,8 +92,6 @@ Smart Chair Detector Enclosure:
 
 <img src="Picture/SCD enclosure.jpg" height="300em" />
 
-<img src="Picture/SMART CHAIR DETECTOR.jpg" height="300em" />
-
 Base of Communication Center:
 
 <img src="Picture/base11.jpg" height="350em" />
@@ -119,6 +117,18 @@ Chair Holder:
 Chair:
 
 <img src="Picture/chair.jpg" height="200em" />
+
+## Result:
+
+Smart Chair Detector:
+
+<img src="Picture/SMART CHAIR DETECTOR.jpg" height="300em" />
+
+Deployment:
+
+<img src="Picture/deployment1.jpg" height="250em" />
+
+<img src="Picture/deployment2.jpg" height="250em" />
 
 Communication Center:
 
