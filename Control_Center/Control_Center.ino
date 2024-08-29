@@ -57,10 +57,10 @@ int people = 0;
 int light_intensity = 0;
 int CO2 = 0;
 
-#define SECRET_SSID "CE-Hub-Student"
-#define SECRET_PASS "casa-ce-gagarin-public-service"
-#define SECRET_MQTTUSER "student"
-#define SECRET_MQTTPASS "ce2021-mqtt-forget-whale"
+#define SECRET_SSID "use your own here"
+#define SECRET_PASS "use your own here"
+#define SECRET_MQTTUSER "use your own here"
+#define SECRET_MQTTPASS "use your own here"
 
 const char* ssid     = SECRET_SSID;
 const char* password = SECRET_PASS;
