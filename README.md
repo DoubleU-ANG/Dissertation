@@ -90,7 +90,7 @@ Custom-designed enclosures were developed for the circuit boards, sensors and ac
 
 Smart Chair Detector Enclosure:
 
-<img src="Picture/SCD enclosure.jpg" height="500em" />
+<img src="Picture/SCD enclosure.jpg" height="300em" />
 
 Base of Communication Center:
 
