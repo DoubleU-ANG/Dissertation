@@ -43,6 +43,26 @@ Communication center circuit schematic:
 
 <img src="Picture/Control Center First Circuit.jpg" height="500em" />
 
+It worth noting that when connect two OLED screens to circuit, physical address of one of them should be changed by soldering the resister behind the screen (shown as picture below) to another position for another address, otherwise the microcontroller is not able to recognise these two screens. It has two physical address； 0x78 and 0x7A，and 0x78 is the default one.
+
+0x78；
+
+<img src="Picture/OLED screen 1.png" height="500em" />
+
+0x7A:(manually modification needed)
+
+<img src="Picture/OLED screen 2.png" height="500em" />
+
+After successfully assembling the circuit board and connecting all components, test the circuit by the code provided.
+
+Code for smart chair detector:
+
+<img src="Picture/Picture/codecc.png" height="500em" />
+
+Code for communication center:
+
+<img src="Picture/Picture/codescd.png" height="500em" />
+
 ##### Printed Circuit Board (PCB)
 PCB has been designed for ensuring a more stable and wireless circuit. You can build your own PCB or modified mine which I designed on LCEDA according to your project.
 
@@ -52,8 +72,37 @@ PCB has been designed for ensuring a more stable and wireless circuit. You can b
 
 <img src="Picture/PCB CC.jpg" height="500em" />
 
-<img src="Picture/Smart Chair PCB Design.jpg" height="500em" />
+<img src="Picture/PCB CC PROTOTYPE.jpg" height="500em" />
 
 #### Enclosure：
 Custom-designed enclosures were developed for the circuit boards, sensors and actuators to facilitate their deployment in targeted scenarios. You can build your own enclosure or modified mine on Fusion 360 according to your project.
 
+Smart Chair Detector Enclosure:
+
+<img src="Picture/SCD enclosure.jpg" height="500em" />
+
+Base of Communication Center:
+
+<img src="Picture/base11.jpg" height="500em" />
+
+<img src="Picture/base22.jpg" height="500em" />
+
+Servo Holder:
+
+<img src="Picture/sh.jpg" height="500em" />
+
+Top of Communication Center
+
+<img src="Picture/TOP3.jpg" height="500em" />
+
+<img src="Picture/TOP4.jpg" height="500em" />
+
+Chair Holder:
+
+<img src="Picture/chair holder1.jpg" height="500em" />
+
+<img src="Picture/chair holder2.jpg" height="500em" />
+
+Chair:
+
+<img src="Picture/chair.jpg" height="500em" />
