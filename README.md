@@ -126,9 +126,7 @@ Smart Chair Detector:
 
 Deployment:
 
-<img src="Picture/deployment1.jpg" height="250em" />
-
-<img src="Picture/deployment2.jpg" height="250em" />
+<img src="Picture/deployment1.jpg" height="350em" /> <img src="Picture/deployment2.jpg" height="350em" />
 
 Communication Center:
 
@@ -137,3 +135,15 @@ Communication Center:
 When people sit on one of the chair:
 
 <img src="Picture/people.jpg" height="350em" />
+
+## Steps for recreation:
+
+1. Prepare the hardware needed.
+
+2. Connect all the components and test the functions by code. Remember to replace the key information for WiFi and MQTT broker with your own one.
+
+3. Design your PCB (optional) and Enclosure or modified mine according to your own requirement.
+
+4. Assemble all the electronic components and enclosure.
+
+5. Deploy on your chair
