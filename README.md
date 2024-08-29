@@ -10,9 +10,17 @@ This project aims to implementing a smart Internet of Things (IoT) strategy on c
 
 ## Methodologies:
 The Smart Connected System includes smart chair detector equipped with few sensors and physical twins of chair.
+<img src="Picture/SCD30.png" height="200em" />
 
 ### Hardware:
-#### Sensors:
+
+#### Hardware List:
+
+##### Microcontrollers:
+ESP8266 HUZZAH (Smart Chair Detector)
+ESP32 E-paper screen driver board (Communication Center)
+
+##### Sensors:
 This project use mm-Wave radar SEN0395, CO2, temperature and humidity sensor SCD30, and light sensor TCS3472. Use the code provided to test each sensor before integration.
 
 SEN0395:
@@ -26,6 +34,9 @@ SCD30:
 TCS3472:
 
 <img src="Picture/TCS3472.png" height="200em" />
+
+##### Actuators:
+Actuators are mainly used in communication center, they are: servos, LED rings and OLED screens.
 
 #### Circuit:
 ##### Circuit Connection:
@@ -53,7 +64,7 @@ It worth noting that when connect two OLED screens to circuit, physical address 
 
 <img src="Picture/OLED screen 2.png" height="500em" />
 
-After successfully assembling the circuit board and connecting all components, test the circuit by the code provided.
+After successfully assembling the circuit board and connecting all components, test the circuit functions in Arduino IDE by uploding the code provided to the microcontroller.
 
 Code for smart chair detector:
 
