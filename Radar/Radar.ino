@@ -11,9 +11,9 @@ void setup() {
   mySerial.begin(115200);
   pinMode(LED_BLINK, OUTPUT);
 
-  sensor.factoryReset();       //恢复出厂设置
-  sensor.DetRangeCfg(0, 0.6);    //设置感应距离，最远为9m
-  sensor.OutputLatency(0, 0);  //设置输出延时
+  sensor.factoryReset();      
+  sensor.DetRangeCfg(0, 0.6);    
+  sensor.OutputLatency(0, 0);  
 }
 
 void loop() {
