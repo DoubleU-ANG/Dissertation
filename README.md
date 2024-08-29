@@ -28,6 +28,7 @@ TCS3472:
 <img src="Picture/TCS3472.png" height="500em" />
 
 #### Circuit:
+##### Circuit Connection:
 Connect all the sensor as the schematic shown as below:
 
 Smart chair detector circuit schematic:
@@ -42,6 +43,17 @@ Communication center circuit schematic:
 
 <img src="Picture/Control Center First Circuit.jpg" height="500em" />
 
-#### Enclosure：
+##### Printed Circuit Board (PCB)
+PCB has been designed for ensuring a more stable and wireless circuit. You can build your own PCB or modified mine which I designed on LCEDA according to your project.
 
+<img src="Picture/PCB Detector.jpg" height="500em" />
+
+<img src="Picture/Smart Chair PCB Design.jpg" height="500em" />
+
+<img src="Picture/PCB CC.jpg" height="500em" />
+
+<img src="Picture/Smart Chair PCB Design.jpg" height="500em" />
+
+#### Enclosure：
+Custom-designed enclosures were developed for the circuit boards, sensors and actuators to facilitate their deployment in targeted scenarios. You can build your own enclosure or modified mine on Fusion 360 according to your project.
 
