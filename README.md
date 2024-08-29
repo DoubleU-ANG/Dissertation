@@ -66,11 +66,11 @@ Code for communication center:
 ##### Printed Circuit Board (PCB)
 PCB has been designed for ensuring a more stable and wireless circuit. You can build your own PCB or modified mine which I designed on LCEDA according to your project.
 
-<img src="Picture/PCB Detector.jpg" height="300em" />
+<img src="Picture/PCB Detector.jpg" height="400em" />
 
 <img src="Picture/Smart Chair PCB Design.jpg" height="500em" />
 
-<img src="Picture/PCB CC.jpg" height="300em" />
+<img src="Picture/PCB CC.jpg" height="400em" />
 
 <img src="Picture/PCB CC PROTOTYPE.jpg" height="500em" />
 
