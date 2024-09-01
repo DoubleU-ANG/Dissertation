@@ -133,11 +133,11 @@ Deployment:
 
 Communication Center:
 
-<img src="Picture/NORMAL.jpg" height="350em" />
+<img src="Picture/NORMAL.jpg" height="500em" />
 
 When people sit on one of the chair:
 
-<img src="Picture/people.jpg" height="350em" />
+<img src="Picture/people.jpg" height="500em" />
 
 ## Steps for recreation:
 
