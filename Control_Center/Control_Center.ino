@@ -39,23 +39,19 @@ int pos = 0;
 int servoPin=18;
 int servoPin1=17;
 
-int h = 0; 
-int h1 = 0; 
-int t = 123;
-int t1 = 0;
+int light_temperature1 = 0;
+int temperature1 = 0;
+int humidity1 = 0;
+int people1 = 0;
+int light_intensity1 = 0;
+int CO21 = 0;
 
-int uvLevel = 0;
-int longtitude = 0;
-int latitude = 0;
-uint8_t hour = 0;
-uint8_t minute = 0;
-
-int light_temperature = 0;
-int temperature = 0;
-int humidity = 0;
-int people = 0;
-int light_intensity = 0;
-int CO2 = 0;
+int light_temperature2 = 0;
+int temperature2 = 0;
+int humidity2 = 0;
+int people2 = 0;
+int light_intensity2 = 0;
+int CO22 = 0;
 
 #define SECRET_SSID "use your own here"
 #define SECRET_PASS "use your own here"
@@ -213,22 +209,41 @@ void callback(char* topic, byte* payload, unsigned int length) {
   buffer[length] = '\0';
   Serial.println();
 
-  if (strcmp(topic, "student/CASA0014/plant/ucfnaaf/Color Temperature") == 0) {
+  if (strcmp(topic, "student/CASA0014/plant/ucfnaaf/Color Temperature1") == 0) {
     light_temperature = atoi(buffer);
     Serial.println("for the Color Temperature");
-  } else if (strcmp(topic, "student/CASA0014/plant/ucfnaaf/Light Intensity") == 0) {
+  } else if (strcmp(topic, "student/CASA0014/plant/ucfnaaf/Light Intensity1") == 0) {
     light_intensity = atoi(buffer);
     Serial.println("for the Light Intensity");
-  } else if (strcmp(topic, "student/CASA0014/plant/ucfnaaf/Temperature") == 0) {
+  } else if (strcmp(topic, "student/CASA0014/plant/ucfnaaf/Temperature1") == 0) {
     temperature = atoi(buffer);
     Serial.println("for the Temperature");
-  } else if (strcmp(topic, "student/CASA0014/plant/ucfnaaf/Humidity") == 0) {
+  } else if (strcmp(topic, "student/CASA0014/plant/ucfnaaf/Humidity1") == 0) {
     humidity = atoi(buffer);
     Serial.println("for the Humidity");
-  } else if (strcmp(topic, "student/CASA0014/plant/ucfnaaf/CO2") == 0) {
+  } else if (strcmp(topic, "student/CASA0014/plant/ucfnaaf/CO21") == 0) {
     CO2 = atoi(buffer);
     Serial.println("for the CO2");
-  } else if (strcmp(topic, "student/CASA0014/plant/ucfnaaf/People") == 0) {
+  } else if (strcmp(topic, "student/CASA0014/plant/ucfnaaf/People1") == 0) {
+    people = atoi(buffer);
+    Serial.println("for the People");
+  }
+    if (strcmp(topic, "student/CASA0014/plant/ucfnaaf/Color Temperature2") == 0) {
+    light_temperature = atoi(buffer);
+    Serial.println("for the Color Temperature");
+  } else if (strcmp(topic, "student/CASA0014/plant/ucfnaaf/Light Intensity2") == 0) {
+    light_intensity = atoi(buffer);
+    Serial.println("for the Light Intensity");
+  } else if (strcmp(topic, "student/CASA0014/plant/ucfnaaf/Temperature2") == 0) {
+    temperature = atoi(buffer);
+    Serial.println("for the Temperature");
+  } else if (strcmp(topic, "student/CASA0014/plant/ucfnaaf/Humidity2") == 0) {
+    humidity = atoi(buffer);
+    Serial.println("for the Humidity");
+  } else if (strcmp(topic, "student/CASA0014/plant/ucfnaaf/CO22") == 0) {
+    CO2 = atoi(buffer);
+    Serial.println("for the CO2");
+  } else if (strcmp(topic, "student/CASA0014/plant/ucfnaaf/People2") == 0) {
     people = atoi(buffer);
     Serial.println("for the People");
   }
@@ -243,12 +258,18 @@ void reconnect() {
     if (client.connect(clientId.c_str(), mqttuser, mqttpass)) {
       Serial.println("connected");
       client.subscribe("student/CASA0014/plant/ucfnaaf/inTopic");
-      client.subscribe("student/CASA0014/plant/ucfnaaf/Color Temperature");
-      client.subscribe("student/CASA0014/plant/ucfnaaf/Light Intensity");
-      client.subscribe("student/CASA0014/plant/ucfnaaf/Temperature");
-      client.subscribe("student/CASA0014/plant/ucfnaaf/Humidity");
-      client.subscribe("student/CASA0014/plant/ucfnaaf/CO2");
-      client.subscribe("student/CASA0014/plant/ucfnaaf/People");
+      client.subscribe("student/CASA0014/plant/ucfnaaf/Color Temperature1");
+      client.subscribe("student/CASA0014/plant/ucfnaaf/Light Intensity1");
+      client.subscribe("student/CASA0014/plant/ucfnaaf/Temperature1");
+      client.subscribe("student/CASA0014/plant/ucfnaaf/Humidity1");
+      client.subscribe("student/CASA0014/plant/ucfnaaf/CO21");
+      client.subscribe("student/CASA0014/plant/ucfnaaf/Color Temperature2");
+      client.subscribe("student/CASA0014/plant/ucfnaaf/Light Intensity2");
+      client.subscribe("student/CASA0014/plant/ucfnaaf/Temperature2");
+      client.subscribe("student/CASA0014/plant/ucfnaaf/Humidity2");
+      client.subscribe("student/CASA0014/plant/ucfnaaf/CO22");
+      client.subscribe("student/CASA0014/plant/ucfnaaf/People1");
+      client.subscribe("student/CASA0014/plant/ucfnaaf/People2");
       
     } else {
       Serial.print("failed, rc=");
@@ -330,25 +351,25 @@ void loop() {
     Paint_DrawLine(line3_y, 0, line3_y, height, BLACK, DOT_PIXEL_5X5, LINE_STYLE_DOTTED);
       
     Paint_DrawString_EN(20, 30, "Humidity:", &Font24, WHITE, BLACK);
-    Paint_DrawNum(20, 60, humidity, &Font24, WHITE, BLACK);
+    Paint_DrawNum(20, 60, humidity1, &Font24, WHITE, BLACK);
     Paint_DrawString_EN(60, 60, "%", &Font24, WHITE, BLACK);
     Paint_DrawString_EN(20, 90, "Temperature:", &Font24, WHITE, BLACK);
-    Paint_DrawNum(20, 120, temperature, &Font24, WHITE, BLACK);
+    Paint_DrawNum(20, 120, temperature1, &Font24, WHITE, BLACK);
     Paint_DrawString_EN(60, 120, "C", &Font24, WHITE, BLACK);
     Paint_DrawString_EN(20, 150, "Light Temperature:", &Font24, WHITE, BLACK);
-    Paint_DrawNum(20, 180, light_temperature, &Font24, WHITE, BLACK);
+    Paint_DrawNum(20, 180, light_temperature1, &Font24, WHITE, BLACK);
     Paint_DrawString_EN(20, 210, "Light Intensity:", &Font24, WHITE, BLACK);
-    Paint_DrawNum(20, 240, light_intensity, &Font24, WHITE, BLACK);
+    Paint_DrawNum(20, 240, light_intensity1, &Font24, WHITE, BLACK);
     Paint_DrawString_EN(20, 270, "CO2:", &Font24, WHITE, BLACK);
-    Paint_DrawNum(20, 300, CO2, &Font24, WHITE, BLACK);
+    Paint_DrawNum(20, 300, CO21, &Font24, WHITE, BLACK);
     Paint_DrawString_EN(20, 330, "Available:", &Font24, WHITE, BLACK);
     
-    if(people == 1) {
+    if(people1 == 1) {
       Paint_DrawString_EN(20, 360, "YES", &Font24, WHITE, BLACK);  
       
       sentence01();
       pixels.clear();
-    } else if(people == 2) {
+    } else if(people1 == 2) {
       Paint_DrawString_EN(20, 360, "NO", &Font24, WHITE, BLACK);  
  pixels1.clear(); // Set all pixel colors to 'off'
 
@@ -365,19 +386,38 @@ void loop() {
     }
 
     Paint_DrawString_EN(line3_y + 20, 30, "Humidity:", &Font24, WHITE, BLACK);
-    Paint_DrawNum(line3_y + 20, 60, humidity, &Font24, WHITE, BLACK);
+    Paint_DrawNum(line3_y + 20, 60, humidity2, &Font24, WHITE, BLACK);
     Paint_DrawString_EN(line3_y + 60, 60, "%", &Font24, WHITE, BLACK);
     Paint_DrawString_EN(line3_y + 20, 90, "Temperature:", &Font24, WHITE, BLACK);
-    Paint_DrawNum(line3_y + 20, 120, temperature, &Font24, WHITE, BLACK);
+    Paint_DrawNum(line3_y + 20, 120, temperature2, &Font24, WHITE, BLACK);
     Paint_DrawString_EN(line3_y + 60, 120, "C", &Font24, WHITE, BLACK);
     Paint_DrawString_EN(line3_y + 20, 150, "Light Temperature:", &Font24, WHITE, BLACK);
-    Paint_DrawNum(line3_y + 20, 180, light_temperature +12, &Font24, WHITE, BLACK);
+    Paint_DrawNum(line3_y + 20, 180, light_temperature2, &Font24, WHITE, BLACK);
     Paint_DrawString_EN(line3_y + 20, 210, "Light Intensity:", &Font24, WHITE, BLACK);
-    Paint_DrawNum(line3_y + 20, 240, light_intensity -6, &Font24, WHITE, BLACK);
+    Paint_DrawNum(line3_y + 20, 240, light_intensity2, &Font24, WHITE, BLACK);
     Paint_DrawString_EN(line3_y + 20, 270, "CO2:", &Font24, WHITE, BLACK);
-    Paint_DrawNum(line3_y + 20, 300, CO2, &Font24, WHITE, BLACK);
+    Paint_DrawNum(line3_y + 20, 300, CO22, &Font24, WHITE, BLACK);
     Paint_DrawString_EN(line3_y + 20, 330, "Available:", &Font24, WHITE, BLACK);
-    Paint_DrawString_EN(line3_y + 20, 360, "YES", &Font24, WHITE, BLACK);  
+    if(people2 == 1) {
+      Paint_DrawString_EN(20, 360, "YES", &Font24, WHITE, BLACK);  
+      
+      sentence11();
+      pixels.clear();
+    } else if(people2 == 2) {
+      Paint_DrawString_EN(20, 360, "NO", &Font24, WHITE, BLACK);  
+ pixels.clear(); // Set all pixel colors to 'off'
+
+ for(int i=0; i<NUMPIXELS; i++) { // For each pixel...
+
+ pixels.setPixelColor(i, pixels.Color(0, 150, 250));
+
+ pixels.show();
+// Pause before next pass through loop
+ 
+ }
+          sentence12();
+  myservo.write(180);
+    } 
 
     
     EPD_7IN5_V2_Display(BlackImage);
