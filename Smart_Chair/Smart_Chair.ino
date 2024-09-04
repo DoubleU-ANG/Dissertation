@@ -209,7 +209,7 @@ void startWifi() {
   Serial.println(WiFi.localIP());
 }
 
-void sendMQTT() {
+void sendMQTT() { //send to different topic for different seat
 
   if (!client.connected()) {
     reconnect();
